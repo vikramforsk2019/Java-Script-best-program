@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<head>
+ <script type="text/javascript">
+function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 9; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+document.write(makeid());
+</script>
+<script  type="text/javascript">
+         // Grab the output eleent
+    var output = document.getElementById('output');
+
+       // "el" is the parameter that references the "this" argument that was passed
+    function GetSelectedItem(el) {
+        output.innerHTML = el.value; // set its content to the value of the "el"
+    }
+</script>
+</head>
+
+<body>
+<form name = "f1"> <!-- the "this" in GetSelectedItem(this) is the input -->
+    <input type = "radio" Name = "r1" Value = "ON" onClick="GetSelectedItem(this)">On
+    <input type = "radio" Name = "r1" Value = "OFF" onClick ="GetSelectedItem(this)">Off
+</form>
+
+<div id="output"></div>
+</body>
+</html>

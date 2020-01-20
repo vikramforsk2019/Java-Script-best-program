@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<body >
+<form id="my">
+<p>This is a p element.</p>
+<input type="text" name="user" value="" />
+<input type="text" name="area" value="" />
+<img src="b.png" id="my"/>
+<h1>use of hidden</h1>
+</form>
+<input type="button" onclick="fun2()" value="filter"/>
+<script>
+	document.write(screen.width);
+window.onload=function fun()
+{
+	//document.write(screen.availWidth);
+	if(screen.Width>800)
+	{
+		document.getElementById("my").style.visibility = "hidden";
+	}
+	
+}
+function fun2()
+{
+	//alert("okk");
+			document.getElementById("my").style.visibility = "visible";
+
+}
+</script>
+
+​
+
+</body>
+
+</html>
+
+​
+

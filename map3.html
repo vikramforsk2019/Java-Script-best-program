@@ -1,0 +1,46 @@
+
+<html>
+<head>
+<title>Geolocation API: Technotip.com</title>
+<meta charset="utf-8"/>
+<link href="css/myStyle.css" rel="stylesheet"/>
+<script>
+var geotargetlylocation1549679020706 = document.createElement('script');
+geotargetlylocation1549679020706.setAttribute('type','text/javascript');
+geotargetlylocation1549679020706.async = 1;
+geotargetlylocation1549679020706.setAttribute('src', '//geotargetly-1a441.appspot.com/geolocation?id=-LYF3JPfSYipVQXU90nr');
+document.getElementsByTagName('head')[0].appendChild(geotargetlylocation1549679020706
+	geotargetly_country_name(); //gets visitor country name
+geotargetly_country_code(); //gets visitor country code
+geotargetly_region_name(); //gets visitor Region/State or state name
+geotargetly_region_code(); //gets visitor Region/State or state code
+geotargetly_city_name(); // gets visitor city name
+geotargetly_lat(); // gets visitor latitude
+geotargetly_lng(); // gets visitor longitude 
+geotargetly_ip(); // gets visitor IP address
+
+geotargetly_loaded(); // gets called when data is available
+
+
+//----------------Example-------------
+
+function geotargetly_loaded(){
+  var country_name = geotargetly_country_name();
+  if (country_name == "United States"){
+      //do something
+  }
+}
+
+</script>
+
+<body>
+	<div class="geotargetly_country_name"></div>
+<div class="geotargetly_country_code"></div>
+<div class="geotargetly_region_name"></div>
+<div class="geotargetly_region_code"></div>
+<div class="geotargetly_city_name"></div>
+<div class="geotargetly_lat"></div>
+<div class="geotargetly_lng"></div>
+<div class="geotargetly_ip"></div>
+</body>
+</html>

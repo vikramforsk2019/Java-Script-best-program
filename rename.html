@@ -1,0 +1,55 @@
+<html>
+<head>
+    </head>
+<body>
+ 
+    <form id="form1" enctype="multipart/form-data">
+        <input id="image-file" type="file" name="file1" />
+        <input id="btn-submit" type="submit" value="submit" />
+    </form>
+</body>
+<script>
+    $(document).ready(function() {
+        
+        initImageUpload();
+ 
+        function initImageUpload() {
+            $("#btn-submit").click(function(e) {
+                e.preventDefault();
+ 
+                var everlive = new Everlive({
+                    appId: "",
+                    scheme: "https"
+                });
+ 
+                // construct the form data and apply new file name
+                var file = $('#image-file').get(0).files[0];
+ 
+                var newFileName = file.filename + "new";
+                var formData = new FormData();
+                formData.append('file', file, newFileName);
+ 
+ 
+                $.ajax({
+                    url: everlive.files.getUploadUrl(), // get the upload URL for the server
+                    success: function(fileData) {
+                        alert('Created file with Id: ' + fileData.Result[0].Id); // access the result of the file upload for the created file
+                        alert('The created file Uri is available at URL: ' + fileData.Result[0].Uri);
+                    },
+                    error: function(e) {
+                        alert('error ' + e.message);
+                    },
+                    // Form data
+                    data: formData,
+                    type: 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+                return false;
+            });
+        }
+    });
+</script>
+
+</html>

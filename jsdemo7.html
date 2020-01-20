@@ -1,0 +1,30 @@
+<html>
+    <title>form gmail validation</title>
+    <script>
+    function validate()
+    {
+        var user=document.getElementById("username").value;
+        var pass=document.getElementById("pass");
+var regx=/^([a-z 0-9\-]+)@([a-zA-Z0-9-]+)$/;
+        if(regx.test(user))
+       {
+
+        user.style.border="solid 5px red";
+            document.getElementById("l1").style.visibility="visible";
+            return false;
+       }
+        else
+        {
+       return true;
+        }
+    }
+    </script>
+    <body>
+        <form onsubmit="return validate()" action="jsdemo.html">
+                <input type="text" id="username" placeholder="Username"/>
+                <label id="l1" style="color:gold;visibility:hidden;">invalid</label><br><br>
+<input type="password" id="pass" placeholder="password"/><br><br>
+<button onclick="validate" type="submit">submit</button>
+        </form>
+    </body>
+</html>

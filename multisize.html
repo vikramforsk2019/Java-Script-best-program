@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>size</title>
+</head>
+<script type="text/javascript">
+function validateImage(id) {
+    var formData = new FormData();
+ 
+    var file = document.getElementById(id).files[0];
+ 
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") 
+    {
+        alert('Please select a valid image file');
+        document.getElementById(id).value = '';
+        return false;
+    }
+    if (file.size > 1024000)
+     {
+        alert('Max Upload size is 1MB only');
+        document.getElementById(id).value = '';
+        return false;
+    }
+    return true;
+}
+</script>
+<script>
+	function fun()
+	{
+		alert('hello');
+	}
+	</script>
+    <script type="text/javascript">
+        function call()
+        {
+            fun();
+            validateImage('img1');
+        }
+    </script>
+<body>
+<!-- Assign unique ID to each and pass the same ID as a parameter -->
+<!--input type="file" name="f[]" id="img1" onchange="validateImage('img1');fun();" > -->
+
+<input type="file" name="f[]" id="img1" onchange='call()' > 
+<input type="file" name="f[]" id="img2" onchange="validateImage('img2')" >
+<input type="file" name="f[]" id="img3" onchange="validateImage('img3')" >
+</body>
+</html>

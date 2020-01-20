@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>window close</title>
+	<script type="text/javascript">
+    var w;
+function f1()
+{
+w=window.open("c1.html","a","toolbar=no,scrollbars=no,left=200,top=200,height=200,width=300");
+w.document.write("hello");
+}
+function f2()
+{
+  w.close();
+}
+</script>
+</head>
+<body>
+<button onclick="f1()">open</button>
+<button onclick="f2()">close</button>
+</body>
+</html>

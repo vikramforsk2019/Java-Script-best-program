@@ -1,0 +1,69 @@
+<html>
+<head>
+<script type='text/javascript'>
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('z1');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+function preview_image1(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('z2');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+<style>
+body
+{
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ font-family:helvetica;
+ background-color:#0B3861;
+}
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:95px;
+ display: inline-block;
+}
+#wrapper1
+{
+ text-align:center;
+  /* margin:0 auto; */
+ padding-left: 150px; 
+ width:95px; 
+ display: inline-block;
+ position: fixed;
+}
+#z1
+{
+ max-width:300px;
+}
+</style>
+</head>
+<body>
+	<table >
+<div id="wrapper">
+ <input type="file"  onchange="preview_image(event)">
+ <img id="z1"/ width="50" height="30">
+</div>
+<div id="wrapper1">
+ <input type="file"  onchange="preview_image1(event)">
+ <img id="z2"/ width="50" height="30">
+</div>
+</table>
+</body>
+</html>

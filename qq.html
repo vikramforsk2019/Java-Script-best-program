@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+	<title>size </title>
+
+<script type="text/javascript">
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+   {
+  var output = document.getElementById('z1');
+  output.src = reader.result;
+   }
+ reader.readAsDataURL(event.target.files[0]);
+}
+function preview_image1(event) 
+ {
+ var reader = new FileReader();
+ reader.onload = function()
+   {
+  var output = document.getElementById('z2');
+  output.src = reader.result;
+   }
+ reader.readAsDataURL(event.target.files[0]);
+}
+function preview_image2(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+      {
+  var output = document.getElementById('z3');
+  output.src = reader.result;
+      }
+ reader.readAsDataURL(event.target.files[0]);
+}
+function preview_image3(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+    {
+  var output = document.getElementById('z4');
+  output.src = reader.result;
+    }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+<script>
+	function validateImage(id) {
+    var formData = new FormData();
+ 
+    var file = document.getElementById(id).files[0];
+ 
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") 
+    {
+        alert('Please select a valid image file');
+        document.getElementById(id).value = '';
+        return false;
+    }
+    if (file.size > 1024000)
+     {
+        alert('Max Upload size is 1MB only');
+        document.getElementById(id).value = '';
+        return false;
+    }
+    return true;
+}
+function validateImage1(id) {
+    var formData = new FormData();
+ 
+    var file = document.getElementById(id).files[0];
+ 
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") 
+    {
+        alert('Please select a valid image file');
+        document.getElementById(id).value = '';
+        return false;
+    }
+    if (file.size > 1024000)
+     {
+        alert('Max Upload size is 1MB only');
+        document.getElementById(id).value = '';
+        return false;
+    }
+    return true;
+}
+</script>
+<script type="text/javascript">
+	function call()
+	{
+	
+	preview_image(event);
+   validateImage('a1');
+		
+	}
+</script>
+</head>
+<body>
+<div id='wrapper'>
+  <img id='z1' width='50' height='50'>
+ <input type='file' class='i1' id='a1' name='file1' onchange='call();'  required='' >
+<label for='a1'></label>
+</div>
+<div id='wrapper1'>
+  <img id='z2'/ width='50' height='50'>
+ <input type='file' class='i1' id='a2'  onchange="preview_image1(event);validateImage1('a2');" name='file1' required=''>
+ <label for='a2'>+</label>
+</div>
+<div id='wrapper2'>
+  <img id='z3'/ width='50' height='50'>
+ <input type='file' class='i1' id='a3' onchange='preview_image2(event)'name='file1' required=''>
+ <label for='a3'>+</label>
+</div>
+<div id='wrapper3'>
+  <img id='z4'/ width='50' height='50'>
+ <input type='file' class='i1' id='a4' onchange='preview_image3(event)' name='file1' required=''>
+ <label for='a4'>+</label>
+</div>
+</body>
+</html>
