@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onchange event handler</title>
+	<script type="text/javascript">
+		
+function fun1()
+{
+	
+	var n=document.getElementById("t1").value;
+	if(n==0)
+	{
+		alert("enter username");
+	}
+	else
+	{
+		alert("hello  ::  "+n);
+	}
+}
+
+	</script>
+</head>
+<body onunload='fun1()'>
+<h1>onchange event work after use tab or enter on next</h1>
+ <input type="text" id="t1" name="" value="" onchange="fun1()"/><br>
+ <a href="c3.html">goto</a>
+</body>
+</html>

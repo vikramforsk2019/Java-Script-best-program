@@ -1,0 +1,42 @@
+<html>
+    <title>object demo</title>
+    <head>
+        <script type="text/javascript">
+            function buttonclick()
+            {
+  var str=document.getElementById("text1").value;
+   //alert(str);
+   var rd1=document.getElementById("rd1");
+   var rd2=document.getElementById("rd2");
+
+ if(rd1.checked==true)
+   alert("selectd value:"+rd1.value);
+   else if(rd2.checked==true)
+   alert("selectd value:"+rd2.value);
+   else
+   alert("no value selectd");
+   var select=document.getElementById("selectbox");
+   alert(select.options[select.selectedIndex].value);
+   //var str1=document.getElementById("text2").value;
+                //alert(str);
+                //alert(str1);
+            }
+            </script>
+    </head>
+    <body>
+        <input type="text" id="text1"  placeholder="enter name" >
+        <br><br>
+        <input type="password" id="text2" placeholder="enter password">
+       <br><br>
+        <input type="radio" id="rd1" name="r1" value="c++">c++</input>
+        <input type="radio" id="rd2" name="r1" value="java">java</input>
+        <br><br>
+<select id="selectbox">
+<option value="hindi">hindi</option>
+<option value="english">english</option>
+<option value="urdu">urdu</option>
+</select>     
+
+        <button onclick="buttonclick()">click</button>
+    </body>
+</html>

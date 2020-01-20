@@ -1,0 +1,47 @@
+<html>
+   <head>   
+<script type="text/JavaScript">
+$(document).ready(function(){
+
+  // Delete 
+  $('.delete').click(function(){
+    var el = this;
+    var id = this.id;
+    var splitid = id.split("_");
+
+    // Delete id
+    var deleteid = splitid[1];
+ 
+    // Confirm box
+  confirm("Are you sure want to delete?", function(result) {
+ 
+       if(result){
+         // AJAX Request
+         $.ajax({
+           url: 'ajaxfile.php',
+           type: 'POST',
+           data: { id:deleteid },
+           success: function(response){
+
+             // Removing row from HTML Table
+             $(el).closest('tr').css('background','tomato');
+             $(el).closest('tr').fadeOut(800, function(){ 
+               $(this).remove();
+             });
+
+           }
+         });
+       }
+ 
+    });
+ 
+  });
+});
+</script>
+ </head>
+ <body>
+ 	<h1>delete</h1>
+  <input type="submit" value="submit"  onClick="confirm()" />
+<!--<a href="somefile.php" onClick="bootbox.confirm();">Delete File</a>-->
+</body>
+</html>

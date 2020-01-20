@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onchange event handler</title>
+	<script type="text/javascript">
+		document.write("is is valid");
+function fun1()
+{
+	
+	var n=document.getElementById("t1").value;
+	if(n==0)
+	{
+		alert("enter username");
+	}
+	else
+	{
+		alert("is is valid");
+	}
+}
+function fun2()
+{
+	
+	var len=document.getElementById("t2").value.length;
+	if(len==0||len<8)
+	{
+		alert("enter password and minium length 8");
+	}
+	else
+	{
+		alert("is is valid");
+	}
+}
+function fun4()
+{
+	var len=document.getElementById("t4").value.length;
+	if(len==0||len<10)
+	{
+		alert("enter mobile no. and  length 10");
+	}
+	else
+	{
+		alert("is is valid");
+	}
+}
+function fun5()
+{
+	
+	
+	if (what.selectedIndex < 1)				 
+	{ 
+		alert("Please enter your course."); 
+		
+		
+	} 
+}
+	</script>
+</head>
+<body>
+<h1>onchange event work after use tab or enter on next</h1>
+ <input type="text" id="t1" name="" value="" onchange="fun1()"/><br>
+ pass:<input type="password" id="t2" value="" onchange="" ="fun2()"/><br>
+ email:<input type="text" id="t3" value="" onchange="fun3()"/><br>
+ mobile no:<input type="text" id="t4" value="" onchange="fun4()"/><br>
+ <p>SELECT YOUR COURSE 
+		<select type="text" value="" name="Subject" id="t5" onchange="fun5()"> 
+			<option>BTECH</option> 
+			<option>BBA</option> 
+			<option>BCA</option> 
+			<option>B.COM</option> 
+			<option>GEEKFORGEEKS</option> 
+		</select></p><br><br> 
+</body>
+</html>

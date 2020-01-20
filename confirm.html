@@ -1,0 +1,25 @@
+<html>
+   <head>   
+      <script type = "text/javascript">
+         <!--
+            function getConfirmation() {
+               var retVal = confirm("Do you want to continue ?");
+               if( retVal == true ) {
+                  document.write ("User wants to continue!");
+                  return true;
+               } else {
+                  
+                  return false;
+               }
+            }
+         //-->
+      </script>     
+   </head>
+   
+   <body>
+      <p>Click the following button to delete: </p>      
+      <form>
+         <a href="c4.html" onclick = "return getConfirmation('are you sure for delete');">goto</a>
+      </form>      
+   </body>
+</html>

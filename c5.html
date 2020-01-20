@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onclick event handler</title>
+	<script type="text/javascript">
+function fun()
+{
+	document.write("jao ho..")
+	document.write("<img src='b.png'/>")
+}
+function fun1()
+{
+	document.write("jaj jAJAJA..")
+	document.write("<img src='b.png'/>")
+}
+function fun2()
+{
+	document.write("jaj BLUER..")
+	document.write("<img src='b.png'/>")
+}
+	</script>
+</head>
+<body>
+	<form>
+		<h1>image on mouse</h1>
+	<img src="b.png" onmouseover="src='images.jpeg'"  onmouseout="src='b.png'" width="200"/>
+	<h1>focus event</h1>
+ <input type="text" name="t1" value="gasgsag" onfocus="fun()"/>
+<h1>onchange event work after use tab or enter on next</h1>
+ <input type="text" name="t2" value="gasgsag" onchange="fun1()"/>
+ <h1>onblur event</h1>
+ <input type="text" name="t3" value="gashsajh" onblur="fun2()"/>
+</form>
+</body>
+</html>
